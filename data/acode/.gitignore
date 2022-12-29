@@ -1,0 +1,4 @@
+# Failsafe to ensure required files in the 'acode'
+#	data folder (this folder) are protected.
+!*.README.*
+!*README*
