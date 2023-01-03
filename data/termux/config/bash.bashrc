@@ -46,6 +46,14 @@ fi
 declare -x NSDeps="$HOME/.dependencies/NewSpectrum"
 declare -x Startup="$HOME/config/startup/scripts"
 
+if ![[ -d $NSDeps ]]; then
+	# Download 'term-colors'
+	mkdir -p "$NSDeps/basics/term-colors"
+		wget --quiet "$NSGitHub/Termux-Essentials/bin/term-colors.sh" "$NSDeps/basics/term-colors"
+		wget --quiet "$NSGitHub/Termux-Essentials/bin/.term-colors.conf" "$NSDeps/basics/term-colors"
+fi
+
+
 #★ Escape-Sequence Colors & Formatting
 	#- Text & 'Paragraph' Formatting
 	declare -x reset="\e[0m"
